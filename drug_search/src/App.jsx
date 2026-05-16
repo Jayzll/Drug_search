@@ -51,7 +51,7 @@ function App() {
               type="text" 
               value={query} 
               onChange={(e) => setQuery(e.target.value)} 
-              placeholder="Search by drug name, class, or condition..."
+              placeholder="Search by week, drug name, class, or condition..."
             />
             <button type="submit">Search</button>
           </div>
