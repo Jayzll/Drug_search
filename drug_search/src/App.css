@@ -1,0 +1,117 @@
+:root {
+  --primary: #37353E;
+  --text-dark: #44444E;
+  --text-light: #9a9da0;
+  --highlight: #715A5A;
+  --warning-red: #9c4741;
+  --bg-light: #D3DAD9;
+}
+
+
+body {
+  background-color: #fff;
+  margin: 0;
+  font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+}
+
+.app-wrapper { display: flex; flex-direction: column; transition: 0.3s; }
+
+/* Home/Landing View */
+.home-layout { align-items: center; justify-content: center; height: 100vh; }
+.home-layout .logo { font-family: 'DM Serif Display', serif; font-size: 70px; margin: 0; color: var(--primary); }
+.home-layout .subtitle { margin-top: 30px; margin-bottom: 30px; color: var(--highlight); }
+
+/* Results View Header */
+.results-layout { padding: 20px; }
+.results-layout { 
+  display: flex; flex-direction: column; align-items: center; justify-content:center; font-size: 30px;
+  border-bottom: 1px solid #ddd; padding-bottom: 20px; margin-bottom: 20px;
+}
+.results-layout .logo { font-family: 'DM Serif Display', serif; font-size: 24px; color: var(--primary); cursor: pointer; }
+
+.search-section { 
+  display: flex; flex-direction: column; align-items: center; justify-content:center; font-size: 20px;}
+.logo-container { display: flex; flex-direction: column; align-items: center; justify-content:center; font-size: 20px;}
+/* Search Bar Styling */
+.input-wrapper {
+  display: flex; border: 1px solid #dfe1e5; border-radius: 24px;
+  padding: 8px 20px; width: 500px; max-width: 90vw;
+}
+.input-wrapper:hover { box-shadow: 0 1px 6px rgba(32,33,36,0.28); }
+.input-wrapper input { flex: 1; border: none; outline: none; font-size: 16px; color-scheme: light;}
+.input-wrapper input::placeholder { color: var(--text-light); }
+.input-wrapper button { background: none; border: none; color: var(--primary); font-weight: bold; cursor: pointer; }
+
+/* Result Cards */
+.results-container { max-width: 800px; margin-left: 20px; }
+.results-count { font-size: 14px; color: var(--text-light); margin-bottom: 20px; }
+
+.result-card {
+  background: #fff; border: 1px solid #e0e0e0; border-radius: 8px;
+  padding: 20px; margin-bottom: 20px; box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+}
+
+.card-header { display: flex; gap: 10px; align-items: center; margin-bottom: 10px; }
+.week-badge { background: var(--highlight); color: var(--bg-light); padding: 2px 8px; border-radius: 4px; font-size: 12px; font-weight: bold; }
+.class-label { color: var(--highlight); font-size: 13px; font-weight: 500; }
+
+/* TEXTs */
+
+.drug-title { font-family: 'DM Serif Display', serif; margin: 0 0 15px 0; font-size: 40px; color: var(--primary); }
+.treats-text { color: var(--text-light); font-size: 16px; font-weight: normal; }
+
+.content-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 15px; }
+.info-block strong { font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; font-size: 12px; text-transform: uppercase; color: var(--highlight); margin-bottom: 4px; }
+.info-block p { margin: 0; font-size: 14px; color: var(--text-dark); line-height: 1.4; }
+
+.rare p { color: var(--warning-red); }
+.note { grid-column: span 2; background: var(--bg-light); padding: 10px; border-radius: 4px; border-left: 4px solid var(--highlight); }
+
+@media (max-width: 600px) {
+  .content-grid { grid-template-columns: 1fr; }
+  .content-grid .note { grid-column: span 1; }
+  .results-layout .search-section { flex-direction: column; align-items: flex-start; }
+}
+
+/* FOOTER */
+
+/* Footer Base Styling */
+.app-footer {
+  width: 100%;
+  text-align: center;
+  padding: 20px 0;
+  font-size: 13px;
+}
+
+.app-footer p {
+  margin: 0;
+  color: var(--text-light); /* Uses your existing light gray variable */
+}
+
+.app-footer a {
+  color: var(--highlight); /* Uses your existing accent color */
+  text-decoration: underline;
+  font-weight: 500;
+  transition: color 0.2s ease;
+}
+
+.app-footer a:hover {
+  color: var(--primary); /* Shifts color when hovered */
+}
+
+/* Layout adjustments */
+.home-layout {
+  position: relative; /* Allows absolute positioning for children */
+}
+
+/* Forces the footer to stay pinned to the very bottom on the home page */
+.home-layout .app-footer {
+  position: absolute;
+  bottom: 15px;
+}
+
+/* Adds margin above the footer on the results page so it doesn't hug the last card */
+.results-layout .app-footer {
+  margin-top: 40px;
+  border-top: 1px solid #e0e0e0;
+}
