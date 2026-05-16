@@ -42,7 +42,7 @@ function App() {
       <div className="search-section">
         <div className="logo-container" onClick={() => {setIsSearched(false); setQuery("");}}>
           <div className="logo">DrugSearch</div>
-          <div className="subtitle">BIOL10822/BIOL11822</div>
+          <div className="subtitle">Only BIOL10822/BIOL11822 drugs are searchable</div>
         </div>
         
         <form onSubmit={handleSearch} className="search-form">
