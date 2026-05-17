@@ -83,6 +83,16 @@ body {
   font-size: 13px;
 }
 
+/* Styling for the new last updated note */
+.app-footer .last-updated {
+  font-size: 11px;
+  color: var(--primary);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  opacity: 0.7;
+  margin-bottom: 6px; /* Spacing between the date and the email link */
+}
+
 .app-footer p {
   margin: 0;
   color: var(--text-light); /* Uses your existing light gray variable */
@@ -114,4 +124,94 @@ body {
 .results-layout .app-footer {
   margin-top: 40px;
   border-top: 1px solid #e0e0e0;
+}
+
+/* Search Suggestions*/
+
+/* Search Bar Layout Container Modifications */
+.search-form {
+  position: relative; /* Contextually tethers absolute child coordinates */
+  width: 500px;
+  max-width: 90vw;
+}
+
+.input-wrapper {
+  display: flex; 
+  border: 1px solid #dfe1e5; 
+  border-radius: 24px;
+  padding: 8px 20px; 
+  width: 100%; /* Scaled smoothly inside the parent form container boundaries */
+  box-sizing: border-box;
+}
+
+/* Floating Suggestions Panel styling */
+.suggestions-dropdown {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  background: #ffffff;
+  border: 1px solid #dfe1e5;
+  border-radius: 16px;
+  margin-top: 6px;
+  padding: 8px 0;
+  list-style: none;
+  box-shadow: 0 4px 12px rgba(32,33,36,0.15);
+  z-index: 99; /* Forces dropdown container to float safely over other components */
+  text-align: left;
+}
+
+/* Search Bar Layout Container Modifications */
+.search-form {
+  position: relative; /* Contextually tethers absolute child coordinates */
+  width: 500px;
+  max-width: 90vw;
+}
+
+.input-wrapper {
+  display: flex; 
+  border: 1px solid #dfe1e5; 
+  border-radius: 24px;
+  padding: 8px 20px; 
+  width: 100%; /* Scaled smoothly inside the parent form container boundaries */
+  box-sizing: border-box;
+}
+
+/* Floating Suggestions Panel styling */
+.suggestions-dropdown {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  background: #ffffff;
+  border: 1px solid #dfe1e5;
+  border-radius: 16px;
+  margin-top: 6px;
+  padding: 8px 0;
+  list-style: none;
+  box-shadow: 0 4px 12px rgba(32,33,36,0.15);
+  z-index: 99; /* Forces dropdown container to float safely over other components */
+  text-align: left;
+}
+
+.suggestions-dropdown li {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 20px;
+  font-size: 15px;
+  color: var(--primary);
+  cursor: pointer;
+  transition: background-color 0.1s ease;
+}
+
+/* Row interaction background highlight styling */
+.suggestions-dropdown li:hover {
+  background-color: #f4f5f7;
+}
+
+/* Muted visual search indicator alignment */
+.suggestion-icon {
+  font-size: 18px;
+  color: var(--text-light);
 }
